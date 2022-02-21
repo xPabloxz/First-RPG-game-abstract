@@ -1,0 +1,15 @@
+C:\DotNet_Workspace\Abstracting_a_game\bin\Debug\net6.0\Abstracting_a_game.exe
+C:\DotNet_Workspace\Abstracting_a_game\bin\Debug\net6.0\Abstracting_a_game.deps.json
+C:\DotNet_Workspace\Abstracting_a_game\bin\Debug\net6.0\Abstracting_a_game.runtimeconfig.json
+C:\DotNet_Workspace\Abstracting_a_game\bin\Debug\net6.0\Abstracting_a_game.dll
+C:\DotNet_Workspace\Abstracting_a_game\bin\Debug\net6.0\ref\Abstracting_a_game.dll
+C:\DotNet_Workspace\Abstracting_a_game\bin\Debug\net6.0\Abstracting_a_game.pdb
+C:\DotNet_Workspace\Abstracting_a_game\obj\Debug\net6.0\Abstracting_a_game.csproj.AssemblyReference.cache
+C:\DotNet_Workspace\Abstracting_a_game\obj\Debug\net6.0\Abstracting_a_game.GeneratedMSBuildEditorConfig.editorconfig
+C:\DotNet_Workspace\Abstracting_a_game\obj\Debug\net6.0\Abstracting_a_game.AssemblyInfoInputs.cache
+C:\DotNet_Workspace\Abstracting_a_game\obj\Debug\net6.0\Abstracting_a_game.AssemblyInfo.cs
+C:\DotNet_Workspace\Abstracting_a_game\obj\Debug\net6.0\Abstracting_a_game.csproj.CoreCompileInputs.cache
+C:\DotNet_Workspace\Abstracting_a_game\obj\Debug\net6.0\Abstracting_a_game.dll
+C:\DotNet_Workspace\Abstracting_a_game\obj\Debug\net6.0\ref\Abstracting_a_game.dll
+C:\DotNet_Workspace\Abstracting_a_game\obj\Debug\net6.0\Abstracting_a_game.pdb
+C:\DotNet_Workspace\Abstracting_a_game\obj\Debug\net6.0\Abstracting_a_game.genruntimeconfig.cache

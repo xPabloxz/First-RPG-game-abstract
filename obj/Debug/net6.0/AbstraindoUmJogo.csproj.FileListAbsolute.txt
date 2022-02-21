@@ -1,0 +1,15 @@
+C:\DotNet_Workspace\AbstraindoUmJogo\bin\Debug\net6.0\AbstraindoUmJogo.exe
+C:\DotNet_Workspace\AbstraindoUmJogo\bin\Debug\net6.0\AbstraindoUmJogo.deps.json
+C:\DotNet_Workspace\AbstraindoUmJogo\bin\Debug\net6.0\AbstraindoUmJogo.runtimeconfig.json
+C:\DotNet_Workspace\AbstraindoUmJogo\bin\Debug\net6.0\AbstraindoUmJogo.dll
+C:\DotNet_Workspace\AbstraindoUmJogo\bin\Debug\net6.0\ref\AbstraindoUmJogo.dll
+C:\DotNet_Workspace\AbstraindoUmJogo\bin\Debug\net6.0\AbstraindoUmJogo.pdb
+C:\DotNet_Workspace\AbstraindoUmJogo\obj\Debug\net6.0\AbstraindoUmJogo.csproj.AssemblyReference.cache
+C:\DotNet_Workspace\AbstraindoUmJogo\obj\Debug\net6.0\AbstraindoUmJogo.GeneratedMSBuildEditorConfig.editorconfig
+C:\DotNet_Workspace\AbstraindoUmJogo\obj\Debug\net6.0\AbstraindoUmJogo.AssemblyInfoInputs.cache
+C:\DotNet_Workspace\AbstraindoUmJogo\obj\Debug\net6.0\AbstraindoUmJogo.AssemblyInfo.cs
+C:\DotNet_Workspace\AbstraindoUmJogo\obj\Debug\net6.0\AbstraindoUmJogo.csproj.CoreCompileInputs.cache
+C:\DotNet_Workspace\AbstraindoUmJogo\obj\Debug\net6.0\AbstraindoUmJogo.dll
+C:\DotNet_Workspace\AbstraindoUmJogo\obj\Debug\net6.0\ref\AbstraindoUmJogo.dll
+C:\DotNet_Workspace\AbstraindoUmJogo\obj\Debug\net6.0\AbstraindoUmJogo.pdb
+C:\DotNet_Workspace\AbstraindoUmJogo\obj\Debug\net6.0\AbstraindoUmJogo.genruntimeconfig.cache
