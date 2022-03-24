@@ -1,3 +1,5 @@
+using Abstracting_a_game.src.Model;
+
 namespace Abstracting_a_game.src.Entities
 {
     public abstract class Heroes

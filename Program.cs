@@ -4,34 +4,47 @@ using Abstracting_a_game.src.Model;
 
 namespace Abstracting_a_game
 {
-    public class Program
+    public class Program : Characters
     {
         static void Main()
         {
-            int ChoiceCharacter, ChoiceAttack, InitialHP;
+            int ChoiceCharacter;
             string Question = "S";
-            bool WrongChoice = false;
-            
-            
 
             while(Question == "S")
             {
-                Knight Arus = new Knight("Arus",42,"Knight",749,72);  
-                Ninja Wedge = new Ninja("Wedge",42,"Ninja",574,89);
-                WhiteWizard Jennica = new WhiteWizard("Jennica",42,"White Wizard",601,482);  
-                BlackWizard Tepapa = new BlackWizard("Tepapa",42,"Black Wizard",385,641);
-                Choice ChoosenCharacter = new Choice("",0,0);
                 do
                 {
-                    
+                    ChoiceCharacter = MainMenu();
 
-                    Console.WriteLine($@"
+                } while(ChoiceCharacter <= 0 || ChoiceCharacter > 3);
+
+                    Console.WriteLine("Você está lutando contra o Mago das trevas Tepapa.");
+                    Console.WriteLine();
+
+                    Battle(ChoiceCharacter);
+
+                Console.WriteLine();
+                
+                Question = FinalMessage();
+                
+            }
+            
+         }
+
+
+
+        public static int  MainMenu()
+        {
+
+            Console.WriteLine($@"
                     --------Selecione o seu personagem---------
                     1 - {Arus} 2 - {Wedge} 3 - {Jennica}
                     Digite o numero para a escolha: ");
-                    ChoiceCharacter = int.Parse(Console.ReadLine());
 
-                    switch(ChoiceCharacter)
+            int ChoiceCharacter = int.Parse(Console.ReadLine());
+    
+            switch(ChoiceCharacter)
                     {
                         case 1:
                         Console.WriteLine("Voce escolheu o Cavaleiro Arus." );
@@ -55,14 +68,23 @@ namespace Abstracting_a_game
                         Console.WriteLine("Escolha errada!");
                         break;
                     }
-                } while(ChoiceCharacter <= 0 || ChoiceCharacter > 3);
 
-                    InitialHP = ChoosenCharacter.HP;
+            return ChoiceCharacter;
+        }
 
-                    Console.WriteLine("Você está lutando contra o Mago das trevas Tepapa.");
-                    Console.WriteLine();
 
-                do
+
+        public static void Battle(int ChoiceCharacter)
+        {
+            int ChoiceAttack;
+            bool WrongChoice = false;
+
+            int FirstPlayerHP = ChoosenCharacter.HP;
+            int FirstPlayerMP = ChoosenCharacter.MP;
+            int FirstEnemyHP = Tepapa.HP;
+            int FirstEnemyMP = Tepapa.MP;
+
+            do
                 {
                     if(Tepapa.MP > 300)
                     {
@@ -70,8 +92,8 @@ namespace Abstracting_a_game
                     }
 
                     Console.WriteLine("-----Status-----");
-                    Console.WriteLine($@"{ChoosenCharacter.Name} HP: {ChoosenCharacter.HP} e {ChoosenCharacter.Name} MP: {ChoosenCharacter.MP}");
-                    Console.WriteLine($@"Tepapa HP: {Tepapa.HP} e Tepapa MP: {Tepapa.MP}");
+                    Console.WriteLine($@"{ChoosenCharacter.Name} HP: {FirstPlayerHP}/{ChoosenCharacter.HP} e {ChoosenCharacter.Name} MP: {FirstPlayerMP}/{ChoosenCharacter.MP}");
+                    Console.WriteLine($@"Tepapa HP: {FirstEnemyHP}/{Tepapa.HP} e Tepapa MP: {FirstEnemyMP}/{Tepapa.MP}");
 
                     ChoiceAttack = AttackMenu();
 
@@ -83,20 +105,26 @@ namespace Abstracting_a_game
                             {
                                 Console.WriteLine(Arus.Attack());
                                 Tepapa.HP = Arus.Damage(Tepapa.HP);
-                                Console.WriteLine($"Tepapa HP: {Tepapa.HP}");
+                                Console.WriteLine($"Tepapa HP: {FirstEnemyHP}/{Tepapa.HP}");
+                                Console.WriteLine("Pressione [Enter]");
+                                Console.ReadLine();
                             }
                             else
                             {
                                 if(ChoosenCharacter.MP < 35)
                                 {
                                     Console.WriteLine("Arus tentou atacar, mas esta sem Magical Points.");
+                                    Console.WriteLine("Pressione [Enter]");
+                                    Console.ReadLine();
                                 }
                                 else
                                 {
                                 Console.WriteLine(Arus.SpecialAttack());
                                 Tepapa.HP = Arus.SpecialDamage(Tepapa.HP,ChoosenCharacter.MP);
                                 ChoosenCharacter.MP = Arus.SpecialDamage(0,ChoosenCharacter.MP);
-                                Console.WriteLine($"Tepapa HP: {Tepapa.HP}");
+                                Console.WriteLine($"Tepapa HP: {FirstEnemyHP}/{Tepapa.HP}");
+                                Console.WriteLine("Pressione [Enter]");
+                                Console.ReadLine();
                                 }
                             }
                         }
@@ -106,20 +134,26 @@ namespace Abstracting_a_game
                             {
                                 Console.WriteLine(Wedge.Attack());
                                 Tepapa.HP = Wedge.Damage(Tepapa.HP);
-                                Console.WriteLine($"Tepapa HP: {Tepapa.HP}");
+                                Console.WriteLine($"Tepapa HP: {FirstEnemyHP}/{Tepapa.HP}");
+                                Console.WriteLine("Pressione [Enter]");
+                                Console.ReadLine();
                             }
                             else
                             {
                                 if(ChoosenCharacter.MP < 40)
                                 {
                                     Console.WriteLine("Wedge tentou atacar, mas esta sem Magical Points.");
+                                    Console.WriteLine("Pressione [Enter]");
+                                    Console.ReadLine();
                                 }
                                 else
                                 {
                                 Console.WriteLine(Wedge.SpecialAttack());
                                 Tepapa.HP = Wedge.SpecialDamage(Tepapa.HP,ChoosenCharacter.MP);
                                 ChoosenCharacter.MP = Wedge.SpecialDamage(0,ChoosenCharacter.MP);
-                                Console.WriteLine($"Tepapa HP: {Tepapa.HP}");
+                                Console.WriteLine($"Tepapa HP: {FirstEnemyHP}/{Tepapa.HP}");
+                                Console.WriteLine("Pressione [Enter]");
+                                Console.ReadLine();
                                 }
                             }
                         }
@@ -129,20 +163,26 @@ namespace Abstracting_a_game
                             {
                                 Console.WriteLine(Jennica.Attack());
                                 Tepapa.HP = Jennica.Damage(Tepapa.HP);
-                                Console.WriteLine($"Tepapa HP: {Tepapa.HP}");
+                                Console.WriteLine($"Tepapa HP: {FirstEnemyHP}/{Tepapa.HP}");
+                                Console.WriteLine("Pressione [Enter]");
+                                Console.ReadLine();
                             }
                             else
                             {
                                 if(ChoosenCharacter.MP < 50)
                                 {
                                     Console.WriteLine("Jennica tentou atacar, mas esta sem Magical Points.");
+                                    Console.WriteLine("Pressione [Enter]");
+                                    Console.ReadLine();
                                 }
                                 else
                                 {
                                 Console.WriteLine(Jennica.SpecialAttack());
                                 Tepapa.HP = Jennica.SpecialDamage(Tepapa.HP,ChoosenCharacter.MP);
                                 ChoosenCharacter.MP = Jennica.SpecialDamage(0,ChoosenCharacter.MP);
-                                Console.WriteLine($"Tepapa HP: {Tepapa.HP}");
+                                Console.WriteLine($"Tepapa HP: {FirstEnemyHP}/{Tepapa.HP}");
+                                Console.WriteLine("Pressione [Enter]");
+                                Console.ReadLine();
                                 }
                             }
                         }
@@ -154,6 +194,8 @@ namespace Abstracting_a_game
                                 if(Tepapa.MP < 300)
                                     {
                                         Console.WriteLine("Tepapa tentou atacar, mas esta sem Magical points.");
+                                        Console.WriteLine("Pressione [Enter]");
+                                        Console.ReadLine();
                                         WrongChoice = true;
                                     }
                                     else
@@ -168,7 +210,9 @@ namespace Abstracting_a_game
                                 Console.WriteLine(Tepapa.Attack());
                                 ChoosenCharacter.HP = Tepapa.Damage(ChoosenCharacter.HP);
                             }
-                            Console.WriteLine($"{ChoosenCharacter.Name} HP: {ChoosenCharacter.HP}");
+                            Console.WriteLine($"{ChoosenCharacter.Name} HP: {FirstPlayerHP}/{ChoosenCharacter.HP}");
+                            Console.WriteLine("Pressione [Enter]");
+                            Console.ReadLine();
                             Console.WriteLine();
                             ChoosenCharacter.MP += 5;
                             Tepapa.MP += 5;
@@ -189,14 +233,12 @@ namespace Abstracting_a_game
                 {
                     Console.WriteLine("Parabéns!!!! Você derrotou o Mago das Trevas Tepapa!");
                 }
-                
-                Console.WriteLine();
-                
-                Question = FinalMessage();
-                
-            }
-            
-         }
+
+                Tepapa.HP = FirstEnemyHP;
+                Tepapa.MP = FirstEnemyMP;
+        }
+
+
 
         static int AttackMenu()
         {
@@ -209,6 +251,9 @@ Digite o Número: ");
                 
                return int.Parse(Console.ReadLine());
         }
+
+
+        
         static string FinalMessage()
         {
             string Question;
@@ -221,10 +266,15 @@ Digite o Número: ");
                 }
                 else
                 {
+                    Console.WriteLine();
                     System.Console.WriteLine("Saindo....");
+                    Console.ReadLine();
                     return Question;
                 }        
         }
+
+
+
     }
 }
 

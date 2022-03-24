@@ -12,7 +12,7 @@
             "program": "${workspaceFolder}/bin/Debug/net6.0/Abstracting_a_game.dll",
             "args": [],
             "cwd": "${workspaceFolder}",
-            "console": "integratedTerminal",
+            "console": "externalTerminal",
             "stopAtEntry": false
         },
         {
